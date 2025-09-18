@@ -2,8 +2,8 @@
 
 # Hi, I'm Genta Ameku 👋
 
-Frontend Engineer from Japan 🇯🇵
-Specialized in React / Next.js / TypeScript, passionate about UI/UX.
+Frontend Engineer from Japan 🇯🇵  
+Specialized in React / Next.js / TypeScript, passionate about UI/UX.  
 Have limited experience in backend development, and it's not my strong area.
 
 ---
