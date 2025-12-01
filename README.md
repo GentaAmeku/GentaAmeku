@@ -10,13 +10,5 @@ MBTI: [INFJ-A](https://www.16personalities.com/ja/infj%E5%9E%8B%E3%81%AE%E6%80%A
 
 ---
 
-## 📈 GitHub Stats
-![Genta's GitHub stats](https://github-readme-stats.vercel.app/api?username=GentaAmeku&show_icons=true&theme=radical)
-
-## 🔧 Top Languages
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=GentaAmeku&hide=html,css,php,ruby,hcl&layout=compact&theme=gruvbox)](https://github.com/anuraghazra/github-readme-stats)
-
----
-
 ## 🌐 Links
 - [Portfolio](https://www.genta-ameku.com)
