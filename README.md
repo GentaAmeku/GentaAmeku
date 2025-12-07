@@ -1,14 +1,17 @@
 ![gitartwork](gitartwork.svg)
 
-# Hi, I'm Genta Ameku 👋
+# Hey, there! ✨
 
-Frontend Engineer from Japan 🇯🇵  
-Specialized in React / Next.js / TypeScript, passionate about UI/UX.  
-Have limited experience in backend development, and it's not my strong area.
+I'm GentaAmeku, a front-end engineer from Japan. 🇯🇵
 
-MBTI: [INFJ-A](https://www.16personalities.com/ja/infj%E5%9E%8B%E3%81%AE%E6%80%A7%E6%A0%BC)
+I'm working on developing user-friendly and beautiful Web UIs, focusing on React / Next.js / TypeScript.
+
+For detailed profile and inquiries, please visit my portfolio site.
 
 ---
 
 ## 🌐 Links
+
 - [Portfolio](https://www.genta-ameku.com)
+
+- MBTI: [INFJ-A](https://www.16personalities.com/ja/infj%E5%9E%8B%E3%81%AE%E6%80%A7%E6%A0%BC)
