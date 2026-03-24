@@ -4,7 +4,7 @@
 
 I'm GentaAmeku, a front-end engineer from Japan. 🇯🇵
 
-I'm working on developing user-friendly and beautiful Web UIs, focusing on React / Next.js / TypeScript.
+I'm working on developing user-friendly and beautiful Web UIs, focusing on React / Next.js / Tanstack Start / TypeScript.
 
 For detailed profile and inquiries, please visit my portfolio site.
 
