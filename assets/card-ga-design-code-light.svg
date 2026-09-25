@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="370" height="150" viewBox="0 0 370 150" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="376" height="158" viewBox="0 0 376 158" role="img" aria-labelledby="title desc">
 <title id="title">ga-design-code</title>
 <desc id="desc">The source of my portfolio site, built with Next.js, TypeScript and Tailwind CSS.</desc>
 <style>
@@ -8,6 +8,7 @@
 .tags{font:500 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#6e7781}
 .arrow{font:600 16px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:#6e7781}
 </style>
+<g transform="translate(6 0)">
 <rect x=".5" y=".5" width="369" height="149" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
 <rect x="20" y="24" width="28" height="6" rx="3" fill="#ff96f8" fill-opacity="1"/>
 <text class="label" x="58" y="31">PORTFOLIO</text>
@@ -16,4 +17,5 @@
 <text class="body" x="20" y="90">The source of my portfolio site,</text>
 <text class="body" x="20" y="108">built with Next.js, TypeScript and Tailwind CSS.</text>
 <text class="tags" x="20" y="134">Next.js  ·  TypeScript  ·  Tailwind CSS</text>
+</g>
 </svg>

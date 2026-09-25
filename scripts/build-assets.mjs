@@ -109,7 +109,16 @@ const CARDS = [
   },
 ];
 
-const card = (t, c) => `<svg xmlns="http://www.w3.org/2000/svg" width="370" height="150" viewBox="0 0 370 150" role="img" aria-labelledby="title desc">
+// Cards sit two to a row at width="50%" with no whitespace between them, so each
+// canvas carries half the gutter on its inner side: the outer edges line up with
+// the README text and the gap between the columns stays even.
+const CARD = { width: 370, height: 150, gutter: 12, rowGap: 8 };
+
+const card = (t, c, column) => {
+  const canvasWidth = CARD.width + CARD.gutter / 2;
+  const canvasHeight = CARD.height + CARD.rowGap;
+  const dx = column === 1 ? CARD.gutter / 2 : 0;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${canvasWidth}" height="${canvasHeight}" viewBox="0 0 ${canvasWidth} ${canvasHeight}" role="img" aria-labelledby="title desc">
 <title id="title">${escape(c.title)}</title>
 <desc id="desc">${escape(c.body.join(" "))}</desc>
 <style>
@@ -119,6 +128,7 @@ const card = (t, c) => `<svg xmlns="http://www.w3.org/2000/svg" width="370" heig
 .tags{font:500 11px ${MONO};fill:${t.muted}}
 .arrow{font:600 16px ${SANS};fill:${t.muted}}
 </style>
+<g transform="translate(${dx} 0)">
 <rect x=".5" y=".5" width="369" height="149" rx="10" fill="${t.card}" stroke="${t.border}"/>
 <rect x="20" y="24" width="28" height="6" rx="3" fill="${c.marker}" fill-opacity="${t.markerOpacity}"/>
 <text class="label" x="58" y="31">${escape(c.label)}</text>
@@ -126,8 +136,10 @@ const card = (t, c) => `<svg xmlns="http://www.w3.org/2000/svg" width="370" heig
 <text class="title" x="20" y="64">${escape(c.title)}</text>
 ${c.body.map((line, i) => `<text class="body" x="20" y="${90 + i * 18}">${escape(line)}</text>`).join("\n")}
 <text class="tags" x="20" y="134">${escape(c.tags.join("  ·  "))}</text>
+</g>
 </svg>
 `;
+};
 
 // Tech rows follow the AI section of the portfolio (ga-design-code); its icons
 // were copied into assets/icons/. Suno and Dreamina use the icons their official
@@ -208,6 +220,6 @@ mkdirSync("assets", { recursive: true });
 for (const [name, theme] of Object.entries(THEMES)) {
   writeFileSync(`assets/header-${name}.svg`, header(theme));
   writeFileSync(`assets/tech-${name}.svg`, tech(theme));
-  for (const c of CARDS) writeFileSync(`assets/card-${c.slug}-${name}.svg`, card(theme, c));
+  CARDS.forEach((c, i) => writeFileSync(`assets/card-${c.slug}-${name}.svg`, card(theme, c, i % 2)));
 }
 console.log(`wrote ${4 + CARDS.length * 2} files to assets/`);
