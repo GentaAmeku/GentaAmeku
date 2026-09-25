@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="376" height="158" viewBox="0 0 376 158" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="378" height="162" viewBox="0 0 378 162" role="img" aria-labelledby="title desc">
 <title id="title">One dashboard, three stacks</title>
 <desc id="desc">The same dashboard built with Next.js, TanStack Start and Rust + htmx.</desc>
 <style>

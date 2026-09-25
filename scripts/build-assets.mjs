@@ -112,7 +112,9 @@ const CARDS = [
 // Cards sit two to a row at width="50%" with no whitespace between them, so each
 // canvas carries half the gutter on its inner side: the outer edges line up with
 // the README text and the gap between the columns stays even.
-const CARD = { width: 370, height: 150, gutter: 12, rowGap: 8 };
+// rowGap is smaller than gutter because the inline images already leave a few
+// pixels below each row; together they read as the same gap both ways.
+const CARD = { width: 370, height: 150, gutter: 16, rowGap: 12 };
 
 const card = (t, c, column) => {
   const canvasWidth = CARD.width + CARD.gutter / 2;
