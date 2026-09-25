@@ -1,6 +1,6 @@
-// Builds the profile header and project cards as light/dark SVGs.
+// Builds the profile header, tech rows and project cards as light/dark SVGs.
 // Run: node scripts/build-assets.mjs
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const SANS =
   'ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
@@ -129,9 +129,86 @@ ${c.body.map((line, i) => `<text class="body" x="20" y="${90 + i * 18}">${escape
 </svg>
 `;
 
+// Tech rows mirror the skills section of the portfolio (ga-design-code):
+// the icons in assets/icons/ are copied from its src/components/Icons, and
+// "gold" marks what the portfolio ranks gold.
+const TECH_ROWS = [
+  {
+    label: "AI",
+    marker: MARKER.yellow,
+    items: [
+      { icon: "claude", name: "Claude", gold: true },
+      { icon: "codex", name: "Codex", gold: true },
+      { icon: "gemini", name: "Gemini", gold: true },
+      { icon: "opencode", name: "OpenCode", gold: true },
+      { icon: "grok", name: "Grok", gold: true },
+      { icon: "hermes-agent", name: "Hermes Agent", gold: true },
+    ],
+  },
+  {
+    label: "FRONT-END",
+    marker: MARKER.blue,
+    items: [
+      { icon: "nextjs", name: "Next.js", gold: true },
+      { icon: "tanstack-start", name: "TanStack Start", gold: true },
+      { icon: "angular", name: "Angular" },
+      { icon: "astro", name: "Astro" },
+    ],
+  },
+];
+
+const TECH = { rowHeight: 104, labelWidth: 118, column: 118, icon: 40 };
+
+// Inlines an icon file as a nested <svg>. Pure black fills follow the theme ink
+// so marks like Codex and Next.js stay visible in dark mode.
+const inlineIcon = (slug, x, y, size, ink) => {
+  const source = readFileSync(`assets/icons/${slug}.svg`, "utf8");
+  const viewBox = source.match(/viewBox="([^"]+)"/)[1];
+  const outer = source.match(/<svg([^>]*)>/)[1];
+  const fill = (outer.match(/fill="([^"]+)"/) || [])[1] ?? "#000000";
+  const rules = [...outer.matchAll(/(fill-rule|clip-rule)="([^"]+)"/g)].map((m) => `${m[1]}="${m[2]}"`).join(" ");
+  const inner = source
+    .replace(/^[\s\S]*?<svg[^>]*>/, "")
+    .replace(/<\/svg>\s*$/, "")
+    .replace(/<title>[\s\S]*?<\/title>/, "")
+    .replaceAll('fill="#000000"', `fill="${ink}"`);
+  const color = fill === "#000000" ? ink : fill;
+  return `<svg x="${x}" y="${y}" width="${size}" height="${size}" viewBox="${viewBox}" fill="${color}" ${rules}>${inner}</svg>`;
+};
+
+const tech = (t) => {
+  const width = TECH.labelWidth + TECH.column * Math.max(...TECH_ROWS.map((r) => r.items.length));
+  const height = TECH.rowHeight * TECH_ROWS.length;
+  const names = TECH_ROWS.flatMap((r) => r.items.map((i) => i.name)).join(", ");
+  const rows = TECH_ROWS.map((row, r) => {
+    const top = r * TECH.rowHeight + 12;
+    const items = row.items.map((item, i) => {
+      const center = TECH.labelWidth + i * TECH.column + TECH.column / 2;
+      const underline = item.gold
+        ? `<rect x="${center - item.name.length * 3.4}" y="${top + 71}" width="${item.name.length * 6.8}" height="3" rx="1.5" fill="${MARKER.yellow}" fill-opacity="${Math.max(t.markerOpacity, 0.8)}"/>`
+        : "";
+      return `${inlineIcon(item.icon, center - TECH.icon / 2, top, TECH.icon, t.ink)}
+${underline}<text class="name" x="${center}" y="${top + 64}" text-anchor="middle">${escape(item.name)}</text>`;
+    });
+    return `<rect x="0" y="${top + 12}" width="24" height="6" rx="3" fill="${row.marker}" fill-opacity="${Math.max(t.markerOpacity, 0.8)}"/>
+<text class="label" x="34" y="${top + 19}">${escape(row.label)}</text>
+${items.join("\n")}`;
+  });
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title">
+<title id="title">${escape(names)}</title>
+<style>
+.label{font:600 11px ${MONO};letter-spacing:2px;fill:${t.muted}}
+.name{font:500 12.5px ${SANS};fill:${t.ink}}
+</style>
+${rows.join("\n")}
+</svg>
+`;
+};
+
 mkdirSync("assets", { recursive: true });
 for (const [name, theme] of Object.entries(THEMES)) {
   writeFileSync(`assets/header-${name}.svg`, header(theme));
+  writeFileSync(`assets/tech-${name}.svg`, tech(theme));
   for (const c of CARDS) writeFileSync(`assets/card-${c.slug}-${name}.svg`, card(theme, c));
 }
-console.log(`wrote ${2 + CARDS.length * 2} files to assets/`);
+console.log(`wrote ${4 + CARDS.length * 2} files to assets/`);

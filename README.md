@@ -23,8 +23,8 @@ I help teams adopt generative AI and AI-driven development, building on years of
 ## Tech
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Creact%2Cnextjs%2Ctailwind%2Crust%2Ctauri%2Cswift%2Cpy%2Cdocker%2Caws%2Cfigma&theme=dark">
-  <img alt="TypeScript, React, Next.js, Tailwind CSS, Rust, Tauri, Swift, Python, Docker, AWS, Figma" src="https://skillicons.dev/icons?i=ts%2Creact%2Cnextjs%2Ctailwind%2Crust%2Ctauri%2Cswift%2Cpy%2Cdocker%2Caws%2Cfigma&theme=light">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-dark.svg">
+  <img alt="AI: Claude, Codex, Gemini, OpenCode, Grok, Hermes Agent. Front-end: Next.js, TanStack Start, Angular, Astro" src="./assets/tech-light.svg" width="100%">
 </picture>
 
 ## Featured
