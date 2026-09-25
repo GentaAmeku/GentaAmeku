@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="370" height="150" viewBox="0 0 370 150" role="img" aria-labelledby="title desc">
+<title id="title">OnCue</title>
+<desc id="desc">Menu bar reminders from Google Calendar, with a full-screen cue and one-click join.</desc>
+<style>
+.label{font:600 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:2px;fill:#9198a1}
+.title{font:700 20px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:#f0f6fc}
+.body{font:400 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:#d1d7e0}
+.tags{font:500 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9198a1}
+.arrow{font:600 16px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:#9198a1}
+</style>
+<rect x=".5" y=".5" width="369" height="149" rx="10" fill="#151b23" stroke="#3d444d"/>
+<rect x="20" y="24" width="28" height="6" rx="3" fill="#ff96f8" fill-opacity="0.9"/>
+<text class="label" x="58" y="31">MACOS APP</text>
+<text class="arrow" x="350" y="34" text-anchor="end">↗</text>
+<text class="title" x="20" y="64">OnCue</text>
+<text class="body" x="20" y="90">Menu bar reminders from Google Calendar,</text>
+<text class="body" x="20" y="108">with a full-screen cue and one-click join.</text>
+<text class="tags" x="20" y="134">Swift  ·  SwiftUI  ·  Google Calendar</text>
+</svg>
