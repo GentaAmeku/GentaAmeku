@@ -130,8 +130,8 @@ ${c.body.map((line, i) => `<text class="body" x="20" y="${90 + i * 18}">${escape
 `;
 
 // Tech rows follow the AI section of the portfolio (ga-design-code); its icons
-// were copied into assets/icons/. Suno (Simple Icons) and Dreamina (the official
-// site's icon) cover music and animation work.
+// were copied into assets/icons/. Suno and Dreamina use the icons their official
+// sites publish, and cover music and animation work.
 const TECH_ROWS = [
   {
     label: "AI",
