@@ -24,7 +24,7 @@ I help teams adopt generative AI and AI-driven development, building on years of
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-dark.svg">
-  <img alt="AI: Claude, Codex, Gemini, OpenCode, Grok, Hermes Agent. Front-end: Next.js, TanStack Start, Angular, Astro" src="./assets/tech-light.svg" width="100%">
+  <img alt="AI: Claude, Codex, Gemini, OpenCode, Grok, Hermes Agent. AI media: Suno for music, Dreamina for animation" src="./assets/tech-light.svg" width="100%">
 </picture>
 
 ## Featured
