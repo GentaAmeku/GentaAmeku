@@ -11,6 +11,8 @@
   <a href="https://www.16personalities.com/ja/infj%E5%9E%8B%E3%81%AE%E6%80%A7%E6%A0%BC">INFJ-A</a>
 </p>
 
+https://github.com/user-attachments/assets/8b0709a6-4544-444f-9fb2-226ce818aaed
+
 ## About
 
 I'm Genta, a freelance engineer in Japan 🇯🇵.
