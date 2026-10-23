@@ -68,6 +68,14 @@ const CARDS = [
     marker: MARKER.yellow,
   },
   {
+    slug: "tsuzuri",
+    label: "VOICE INPUT",
+    title: "Tsuzuri",
+    body: ["Japanese voice input from the Mac menu bar,", "with live captions and a dictionary for tech terms."],
+    tags: ["Swift", "Soniox", "WhisperKit", "Apple FM"],
+    marker: MARKER.green,
+  },
+  {
     slug: "oncue",
     label: "MACOS APP",
     title: "OnCue",
@@ -90,14 +98,6 @@ const CARDS = [
     body: ["Voice chat with an AI character in Japanese", "on a local LLM, kept entirely on your LAN."],
     tags: ["Gemma", "Irodori-TTS", "Svelte", "Tauri"],
     marker: MARKER.green,
-  },
-  {
-    slug: "dashboard-three-stacks",
-    label: "FRONT-END",
-    title: "One dashboard, three stacks",
-    body: ["The same dashboard built with Next.js,", "TanStack Start and Rust + htmx."],
-    tags: ["Next.js", "TanStack Start", "Rust", "htmx"],
-    marker: MARKER.yellow,
   },
   {
     slug: "ga-design-code",
